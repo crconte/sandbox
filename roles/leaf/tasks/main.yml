@@ -1,0 +1,14 @@
+- name: Transfer Daemons File to Enable BGPD
+  copy: src=daemons dest=/etc/frr/daemons
+
+- name: Generate and Upload frr.conf File
+  template: src=frr.conf.j2 dest=/etc/frr/frr.conf
+
+- name: Generate and Upload interface File
+  template: src=interfaces.j2 dest=/etc/network/interfaces
+
+- name: Reload FRR
+  systemd: name=frr state=reloaded
+
+- name: Restart interface Configuration
+  command: ifreload -a

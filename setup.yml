@@ -1,0 +1,24 @@
+---
+- name: Configure Compute Nodes
+  hosts: compute
+  become: yes
+  become_method: sudo
+
+  roles:
+    - compute
+
+- name: Configure Leaf Nodes
+  hosts: leaf
+  become: yes
+  become_method: sudo
+
+  roles:
+    - leaf
+
+- name: Configure Spine Nodes
+  hosts: spine
+  become: yes
+  become_method: sudo
+
+  roles:
+    - spine

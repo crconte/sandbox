@@ -1,0 +1,33 @@
+{% set node_vars = parameters[inventory_hostname] -%}
+{% set global_vars = parameters['global'] -%}
+
+frr version 7.4+cl4.2.1u1
+frr defaults datacenter
+hostname {{ inventory_hostname }} 
+log syslog informational
+service integrated-vtysh-config
+!
+router bgp {{ node_vars.asn }}
+ no bgp default ipv4-unicast
+ neighbor evpn peer-group
+ neighbor evpn ebgp-multihop 3
+ neighbor evpn update-source lo
+ neighbor spine peer-group
+ neighbor spine remote-as {{ node_vars.remote_uplink_asn }}
+ neighbor {{ global_vars.loopback }}.{{ node_vars.remote_evpn_ip }} remote-as {{ node_vars.remote_evpn_asn }}
+ neighbor {{ global_vars.loopback }}.{{ node_vars.remote_evpn_ip }} peer-group evpn
+ neighbor {{ global_vars.p2p }}.{{ node_vars.remote_uplink_1_ip }} peer-group spine
+ neighbor {{ global_vars.p2p }}.{{ node_vars.remote_uplink_2_ip }} peer-group spine
+ !
+ address-family ipv4 unicast
+  network {{ global_vars.loopback }}.{{ node_vars.loopback }}/32
+  neighbor spine activate
+ exit-address-family
+ !
+ address-family l2vpn evpn
+  neighbor evpn activate
+  advertise-all-vni
+ exit-address-family
+!
+line vty
+!

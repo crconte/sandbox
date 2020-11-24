@@ -1,0 +1,18 @@
+{% set node_vars = parameters[inventory_hostname] -%}
+{% set global_vars = parameters['global'] -%}
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        enp0s3:
+            dhcp4: true
+            match:
+                macaddress: 02:ad:b8:da:8b:56
+            set-name: enp0s3
+        {{ node_vars.nic }}:
+            dhcp4: false
+            addresses: [{{ global_vars.vlan10 }}.{{ node_vars.nic_ip }}/24]
+    version: 2

@@ -1,0 +1,5 @@
+- name: Build Interface Configuration File & Transfer
+  template: src=50-cloud-init.yaml.j2 dest=/etc/netplan/50-cloud-init.yaml
+
+- name: Apply Interface Configuration
+  command: netplan apply

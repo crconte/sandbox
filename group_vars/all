@@ -1,0 +1,61 @@
+parameters:
+  global:
+    p2p: "192.168.250"
+    loopback: "192.168.254"
+    vlan10: "10.10.10"
+  l1:
+    vlan: 10 
+    compute_port: 1
+    loopback: 1
+    asn: 65001
+    remote_uplink_asn: 65100
+    remote_uplink_1_ip: 0
+    remote_uplink_2_ip: 4
+    remote_evpn_asn: 65003
+    remote_evpn_ip: 3
+    uplink_1_port: 2
+    uplink_2_port: 3
+    uplink_1_ip: 1
+    uplink_2_ip: 5
+  l3:
+    vlan: 10
+    compute_port: 1
+    loopback: 3
+    asn: 65003
+    remote_uplink_asn: 65100
+    remote_uplink_1_ip: 2
+    remote_uplink_2_ip: 6
+    remote_evpn_asn: 65001
+    remote_evpn_ip: 1
+    uplink_1_port: 2
+    uplink_2_port: 3
+    uplink_1_ip: 3 
+    uplink_2_ip: 7
+  s1g1:
+    loopback: 51
+    asn: 65100
+    remote_l1_ip: 1
+    remote_l3_ip: 3
+    remote_l1_asn: 65001
+    remote_l3_asn: 65003
+    l1_link: Ethernet0
+    l3_link: Ethernet4
+    l1_ip: 0
+    l3_ip: 2
+  s2g1:
+    loopback: 52
+    asn: 65100
+    remote_l1_ip: 5
+    remote_l3_ip: 7
+    remote_l1_asn: 65001
+    remote_l3_asn: 65003
+    l1_link: Ethernet0
+    l3_link: Ethernet4
+    l1_ip: 4
+    l3_ip: 6
+  c1:
+    nic: enp0s8
+    nic_ip: 10
+  c2: 
+    nic: enp0s8
+    nic_ip: 20    

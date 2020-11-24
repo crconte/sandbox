@@ -1,0 +1,56 @@
+{% set node_vars = parameters[inventory_hostname] -%}
+{% set global_vars = parameters['global'] -%}
+{
+    "BGP_NEIGHBOR": {
+        "{{ global_vars.p2p }}.{{ node_vars.remote_l1_ip }}": {
+            "rrclient": 0, 
+            "name": "{{ node_vars.remote_l1_asn }}", 
+            "local_addr": "{{ global_vars.p2p }}.{{ node_vars.l1_ip }}", 
+            "nhopself": 0, 
+            "holdtime": "10", 
+            "asn": "{{ node_vars.remote_l1_asn }}", 
+            "keepalive": "3"
+        }, 
+        "{{ global_vars.p2p }}.{{ node_vars.remote_l3_ip }}": {
+            "rrclient": 0, 
+            "name": "{{ node_vars.remote_l3_asn }}", 
+            "local_addr": "{{ global_vars.p2p }}.{{ node_vars.l3_ip }}", 
+            "nhopself": 0, 
+            "holdtime": "10", 
+            "asn": "{{ node_vars.remote_l3_asn }}", 
+            "keepalive": "3"
+        }
+    }, 
+    "DEVICE_METADATA": {
+        "localhost": {
+            "hwsku": "Force10-S6000", 
+            "hostname": "{{ inventory_hostname }}", 
+            "platform": "x86_64-kvm_x86_64-r0", 
+            "mac": "08:00:27:9f:a6:3f", 
+            "bgp_asn": "{{ node_vars.asn }}", 
+            "type": "spine"
+        }
+    }, 
+    "DEVICE_NEIGHBOR": {}, 
+    "LOOPBACK_INTERFACE": {
+        "Loopback0|{{ global_vars.loopback }}.{{ node_vars.loopback }}/32": {}
+    }, 
+    "INTERFACE": {
+        "{{ node_vars.l1_link }}|{{ global_vars.p2p }}.{{ node_vars.l1_ip }}/31": {}, 
+        "{{ node_vars.l3_link }}|{{ global_vars.p2p }}.{{ node_vars.l3_ip }}/31": {}
+    }, 
+    "PORT": {
+        "Ethernet0": {
+            "alias": "E0/0", 
+            "admin_status": "up", 
+            "lanes": "29,30,31,32", 
+            "mtu": "9100"
+        }, 
+        "Ethernet4": {
+            "alias": "E0/4", 
+            "admin_status": "up", 
+            "lanes": "25,26,27,28", 
+            "mtu": "9100"
+        }
+    }
+}

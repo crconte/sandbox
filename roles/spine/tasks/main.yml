@@ -1,0 +1,5 @@
+- name: Generate and Upload config_db.json
+  template: src=config_db.json.j2 dest=/etc/sonic/config_db.json
+
+- name: Reload SONiC Configuration file
+  command: config reload -y
