@@ -7,7 +7,7 @@
 * [Sandbox Repository](https://github.comcast.com/DCS/sandbox)
 
 ### Topology
-![Topology](https://github.comcast.com/DCS/sandbox/blob/master/images/sandbox.png)
+![Topology](images/sandbox.png)
 
 ### Getting Started
 
@@ -22,20 +22,20 @@
   * Wait for **~1 minute** for peers and environment to route
 
 * Quick Troubleshooting FAQ:
-  * <details><summary>Occasional hang during ssh process of a node.</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/ssh_error_vagrant_up.png" alt="alt text"></details>
+  * <details><summary>Occasional hang during ssh process of a node.</summary><img src="images/ssh_error_vagrant_up.png" alt="alt text"></details>
   * Option 1:
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
-    * <details><summary>Successful Outcome:</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_halt.png" alt="alt text"><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_up.png" alt="alt text"></details>
+    * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
   * Option 2:
     * Execute `vagrant destroy -f`
     * Restart the install process `vagrant up`
 * For Questions @ Teams: [DCNS Sandbox](https://teams.microsoft.com/l/channel/19%3ae9649259ad074df5b2bf6220c0862819%40thread.tacv2/sandbox?groupId=82f9019b-04f7-41a0-982d-4ff14d9a62e7&tenantId=906aefe9-76a7-4f65-b82d-5ec20775d5aa)
 
 * Verification:
-  * <details><summary>vagrant status</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_status.png" alt="alt text"></details>
-  * <details><summary>ansible all -m ping</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/ansible_ping.png" alt="alt text"></details>
-  * <details><summary>c1 ping test</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/verification.png" alt="alt text"></details>
+  * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
+  * <details><summary>ansible all -m ping</summary><img src="images/ansible_ping.png" alt="alt text"></details>
+  * <details><summary>c1 ping test</summary><img src="images/verification.png" alt="alt text"></details>
 
 ### Configurations
  ### c1
