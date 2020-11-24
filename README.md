@@ -9,7 +9,8 @@
 ![Topology](images/sandbox.png)
 
 ### Getting Started
-
+* Quick Setup on Digital Ocean: [Link](https://cloud.digitalocean.com/registrations/new)
+  * <details><summary>60 Day Free Trial - $100.00 Credit</summary>
 * Setup time is approximately **~9 minutes** if all above requirements are met.
   * Clone the directory `git clone git@github.comcast.com:DCS/sandbox.git`
   * Change directory `cd sandbox`
