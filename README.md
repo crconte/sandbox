@@ -4,7 +4,6 @@
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 * [Atom](https://atom.io)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-* [Sandbox Repository](https://github.comcast.com/DCS/sandbox)
 
 ### Topology
 ![Topology](images/sandbox.png)
@@ -30,7 +29,6 @@
   * Option 2:
     * Execute `vagrant destroy -f`
     * Restart the install process `vagrant up`
-* For Questions @ Teams: [DCNS Sandbox](https://teams.microsoft.com/l/channel/19%3ae9649259ad074df5b2bf6220c0862819%40thread.tacv2/sandbox?groupId=82f9019b-04f7-41a0-982d-4ff14d9a62e7&tenantId=906aefe9-76a7-4f65-b82d-5ec20775d5aa)
 
 * Verification:
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
