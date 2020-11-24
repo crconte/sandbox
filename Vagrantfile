@@ -74,6 +74,8 @@ Vagrant.configure("2") do |config|
       c1.vm.network "private_network", virtualbox__intnet: "c1l1", auto_config: false
       c1.vm.provider "virtualbox" do |vbox|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       c1.vm.provision :ansible do |ansible|
           ansible.become = true
@@ -86,11 +88,13 @@ Vagrant.configure("2") do |config|
       c2.vm.network "private_network", virtualbox__intnet: "c2l3", auto_config: false
       c2.vm.provider "virtualbox" do |vbox|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       c2.vm.provision :ansible do |ansible|
           ansible.become = true
           ansible.playbook = 'verify.yml'
-      end      
+      end
   end
   config.vm.define "l1" do |l1|
       l1.vm.hostname = "l1"
@@ -102,6 +106,8 @@ Vagrant.configure("2") do |config|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       l1.vm.provision :ansible do |ansible|
           ansible.become = true
@@ -118,6 +124,8 @@ Vagrant.configure("2") do |config|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       l3.vm.provision :ansible do |ansible|
           ansible.become = true
@@ -132,6 +140,8 @@ Vagrant.configure("2") do |config|
       s1g1.vm.provider "virtualbox" do |vbox|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       s1g1.vm.provision :ansible do |ansible|
           ansible.become = true
@@ -146,10 +156,12 @@ Vagrant.configure("2") do |config|
       s2g1.vm.provider "virtualbox" do |vbox|
           vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-vms']
           vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-vms']
+          vbox.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+          vbox.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
       end
       s2g1.vm.provision :ansible do |ansible|
           ansible.become = true
           ansible.playbook = 'verify.yml'
       end
-  end     
+  end
 end
