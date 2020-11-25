@@ -1,18 +1,38 @@
 # sandbox
 ### Required Software
+* [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 * [Vagrant](https://www.vagrantup.com)
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Atom](https://atom.io)
-* [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ### Topology
 ![Topology](images/sandbox.png)
 
 ### Getting Started
-* Quick Setup on Digital Ocean: [Link](https://cloud.digitalocean.com/registrations/new)
-  * <details><summary>60 Day Free Trial - $100.00 Credit</summary>
-* Setup time is approximately **~9 minutes** if all above requirements are met.
-  * Clone the directory `git clone git@github.comcast.com:DCS/sandbox.git`
+* **Quick Setup on Digital Ocean:** [60 Day Free Trial with $100.00 credit](https://m.do.co/c/b281130338a0)
+  * <details><summary>Screen Shots of VM Creation</summary>
+      <ul>
+        <li><img src="images/screen1.png" alt="alt text"></li>
+        <li><img src="images/screen2.png" alt="alt text"></li>
+        <li><img src="images/screen3.png" alt="alt text"></li>
+        <li><img src="images/screen4.png" alt="alt text"></li>
+        <li><img src="images/screen5.png" alt="alt text"></li>
+        <li><img src="images/screen6.png" alt="alt text"></li>
+      </ul>
+    </details>
+  * Once logged into the Linux VM run each command in sequence listed:
+    * ```apt update```
+    * ```apt upgrade -y```
+    * ```apt install ansible -y```
+    * ```apt install virtualbox -y```
+    * ```apt install vagrant -y``` 
+    * ```reboot```
+    * ```git clone https://github.com/crconte/sandbox.git```
+    * ```cd sandbox```
+    * ```vagrant up```
+    * ```./inventory_setup_linux.sh```
+    * ```ansible-playbook setup.yml```
+* **General Setup Instructions:** Setup time is approximately **~9 minutes** if all above requirements are met.
+  * Clone the directory `git clone https://github.com/crconte/sandbox.git`
   * Change directory `cd sandbox`
   * `vagrant up` Takes **~8 minutes** to complete
   * Execute the the following script: Takes **~1 second** to complete
@@ -21,17 +41,17 @@
   * `ansible-playbook setup.yml` Takes **~1 minute** to complete
   * Wait for **~1 minute** for peers and environment to route
 
-* Quick Troubleshooting FAQ:
+* **Quick Troubleshooting FAQ:**
   * <details><summary>Occasional hang during ssh process of a node.</summary><img src="images/ssh_error_vagrant_up.png" alt="alt text"></details>
-  * Option 1:
+  * Troubleshooting Steps:
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
+    * Execute `vagrant destroy <problematic node> -f` Example: `vagrant destroy s1g1 -f`
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
-    * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
-  * Option 2:
-    * Execute `vagrant destroy -f`
-    * Restart the install process `vagrant up`
-
-* Verification:
+    * Wait for about ~2 minutes and if the process is hung again execute: `ctrl c`
+    * Repeat the first 3 bullets.  (You may have to repeat the entire process a few times)
+    * <details><summary>Successful Outcome:</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
+    
+* **Verification:**
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
   * <details><summary>ansible all -m ping</summary><img src="images/ansible_ping.png" alt="alt text"></details>
   * <details><summary>c1 ping test</summary><img src="images/verification.png" alt="alt text"></details>
