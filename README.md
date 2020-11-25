@@ -11,9 +11,23 @@
 ### Getting Started
 * Quick Setup on Digital Ocean: [60 Day Free Trial with $100.00 credit](https://m.do.co/c/b281130338a0)
   * <details><summary>Screen Shots of VM Creation</summary>
-    * <img src="images/ssh_error_vagrant_up.png" alt="alt text">
-    * <img src="images/ssh_error_vagrant_up.png" alt="alt text">
-   </details>
+      <ul>
+        <li><img src="images/screen1.png" alt="alt text"></li>
+        <li><img src="images/screen2.png" alt="alt text"></li>
+      </ul>
+    </details>
+  * Once logged in run each command in sequence listed:
+    * apt update
+    * apt upgrade -y
+    * apt install ansible -y
+    * apt install virtualbox -y
+    * apt install vagrant -y 
+    * reboot
+    * git clone https://github.com/crconte/sandbox.git
+    * cd sandbox
+    * vagrant up
+    * ./inventory_setup_linux.sh
+    * ansible-playbook setup.yml
 * Setup time is approximately **~9 minutes** if all above requirements are met.
   * Clone the directory `git clone git@github.comcast.com:DCS/sandbox.git`
   * Change directory `cd sandbox`
