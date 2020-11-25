@@ -45,12 +45,11 @@
   * <details><summary>Occasional hang during ssh process of a node.</summary><img src="images/ssh_error_vagrant_up.png" alt="alt text"></details>
   * Option 1:
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
+    * Execute `vagrant destroy <problematic node> -f` Example: `vagrant destroy s1g1 -f`
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
+    * You may have to repeat the same step several times.
     * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
-  * Option 2:
-    * Execute `vagrant destroy -f`
-    * Restart the install process `vagrant up`
-
+    
 * Verification:
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
   * <details><summary>ansible all -m ping</summary><img src="images/ansible_ping.png" alt="alt text"></details>
