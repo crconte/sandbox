@@ -31,7 +31,7 @@
     * ```vagrant up```
     * ```./inventory_setup_linux.sh```
     * ```ansible-playbook setup.yml```
-* Setup time is approximately **~9 minutes** if all above requirements are met.
+* **General Setup Instructions:** Setup time is approximately **~9 minutes** if all above requirements are met.
   * Clone the directory `git clone git@github.comcast.com:DCS/sandbox.git`
   * Change directory `cd sandbox`
   * `vagrant up` Takes **~8 minutes** to complete
