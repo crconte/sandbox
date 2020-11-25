@@ -2,7 +2,6 @@
 ### Required Software
 * [Vagrant](https://www.vagrantup.com)
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Atom](https://atom.io)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ### Topology
