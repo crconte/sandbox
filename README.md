@@ -47,8 +47,9 @@
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
     * Execute `vagrant destroy <problematic node> -f` Example: `vagrant destroy s1g1 -f`
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
-    * You may have to repeat the same step several times.
-    * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
+    * Wait for about ~2 minutes and if the process is hung execute: `ctrl c`
+    * Repeat the first 3 bullets.  (You may have to repeat the entire process a few times)
+    * <details><summary>Successful Outcome:</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
     
 * **Verification:**
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
