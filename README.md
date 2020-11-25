@@ -14,6 +14,10 @@
       <ul>
         <li><img src="images/screen1.png" alt="alt text"></li>
         <li><img src="images/screen2.png" alt="alt text"></li>
+        <li><img src="images/screen3.png" alt="alt text"></li>
+        <li><img src="images/screen4.png" alt="alt text"></li>
+        <li><img src="images/screen5.png" alt="alt text"></li>
+        <li><img src="images/screen6.png" alt="alt text"></li>
       </ul>
     </details>
   * Once logged in run each command in sequence listed:
