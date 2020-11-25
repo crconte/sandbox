@@ -9,8 +9,11 @@
 ![Topology](images/sandbox.png)
 
 ### Getting Started
-* Quick Setup on Digital Ocean: [Link](https://cloud.digitalocean.com/registrations/new)
-  * <details><summary>60 Day Free Trial - $100.00 Credit</summary>
+* Quick Setup on Digital Ocean: [60 Day Free Trial with $100.00 credit](https://m.do.co/c/b281130338a0)
+  * <details><summary>Screen Shots of VM Creation</summary>
+    * <img src="images/ssh_error_vagrant_up.png" alt="alt text">
+    * <img src="images/ssh_error_vagrant_up.png" alt="alt text">
+   </details>
 * Setup time is approximately **~9 minutes** if all above requirements are met.
   * Clone the directory `git clone git@github.comcast.com:DCS/sandbox.git`
   * Change directory `cd sandbox`
