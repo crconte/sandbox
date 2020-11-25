@@ -1,8 +1,8 @@
 # sandbox
 ### Required Software
+* [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 * [Vagrant](https://www.vagrantup.com)
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ### Topology
 ![Topology](images/sandbox.png)
