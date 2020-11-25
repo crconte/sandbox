@@ -8,7 +8,7 @@
 ![Topology](images/sandbox.png)
 
 ### Getting Started
-* Quick Setup on Digital Ocean: [60 Day Free Trial with $100.00 credit](https://m.do.co/c/b281130338a0)
+* **Quick Setup on Digital Ocean:** [60 Day Free Trial with $100.00 credit](https://m.do.co/c/b281130338a0)
   * <details><summary>Screen Shots of VM Creation</summary>
       <ul>
         <li><img src="images/screen1.png" alt="alt text"></li>
@@ -41,7 +41,7 @@
   * `ansible-playbook setup.yml` Takes **~1 minute** to complete
   * Wait for **~1 minute** for peers and environment to route
 
-* Quick Troubleshooting FAQ:
+* **Quick Troubleshooting FAQ:**
   * <details><summary>Occasional hang during ssh process of a node.</summary><img src="images/ssh_error_vagrant_up.png" alt="alt text"></details>
   * Troubleshooting Steps:
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
@@ -50,7 +50,7 @@
     * You may have to repeat the same step several times.
     * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
     
-* Verification:
+* **Verification:**
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
   * <details><summary>ansible all -m ping</summary><img src="images/ansible_ping.png" alt="alt text"></details>
   * <details><summary>c1 ping test</summary><img src="images/verification.png" alt="alt text"></details>
