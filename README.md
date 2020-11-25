@@ -43,7 +43,7 @@
 
 * Quick Troubleshooting FAQ:
   * <details><summary>Occasional hang during ssh process of a node.</summary><img src="images/ssh_error_vagrant_up.png" alt="alt text"></details>
-  * Option 1:
+  * Troubleshooting Steps:
     * Execute `vagrant halt <problematic node>` Example: `vagrant halt s1g1`
     * Execute `vagrant destroy <problematic node> -f` Example: `vagrant destroy s1g1 -f`
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
