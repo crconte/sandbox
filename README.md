@@ -17,6 +17,7 @@
         <li><img src="images/screen4.png" alt="alt text"></li>
         <li><img src="images/screen5.png" alt="alt text"></li>
         <li><img src="images/screen6.png" alt="alt text"></li>
+        <li><img src="images/screen7.png" alt="alt text"></li>
       </ul>
     </details>
   * Once logged into the Linux VM run each command in sequence listed:
