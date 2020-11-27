@@ -50,7 +50,7 @@
     * Execute `vagrant up <problematic node>` Example: `vagrant up s1g1`
     * Wait for about ~2 minutes and if the process is hung again execute: `ctrl c`
     * Repeat the first 3 bullets.  (You may have to repeat the entire process a few times)
-    * <details><summary>Successful Outcome:</summary><img src="https://github.comcast.com/DCS/sandbox/blob/master/images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
+    * <details><summary>Successful Outcome:</summary><img src="images/vagrant_halt.png" alt="alt text"><img src="images/vagrant_up.png" alt="alt text"></details>
     
 * **Verification:**
   * <details><summary>vagrant status</summary><img src="images/vagrant_status.png" alt="alt text"></details>
